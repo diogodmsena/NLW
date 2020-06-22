@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set bodyId = "page-create-point" %}
+{% set pageId = "page-create-point" %}
 
 {% block title %}
   <title>Ponto de coleta</title>
@@ -11,9 +11,7 @@
 {% endblock styles %}
 
 {% block content %}
-  <div id="page-create-point">
-
-    {% include "partials/page-header.html" %}
+{% include "partials/page-header.html" %}
 
     <form action="">
 
@@ -24,10 +22,20 @@
           <h2>Dados da entidade</h2>
         </legend>
 
-        <div class="field">
-          <label for="name">Nome da entidade</label>
-          <input type="text" name="name" required="required">
-        </div>
+        <div class="field-group">
+          <div class="field">
+            <label for="name">Nome da entidade</label>
+            <input type="text" name="name" required="required">
+          </div>  
+          <div class="field">
+            <label for="name">Imagem da entidade</label>
+            <input 
+              type="url" 
+              name="image" 
+              placeholder="http://"
+              required="required">
+          </div>
+        </div>        
 
         <div class="field-group">
           <div class="field">
@@ -60,8 +68,10 @@
 
       <fieldset>
         <legend>
-          <h2>Itens de coleta</h2>
-          <span>Selecione um ou mais itens abaixo</span>
+          <div class="box">
+            <h2>Itens de coleta</h2>
+            <span>Selecione um ou mais itens abaixo</span>
+          </div>
         </legend>
 
         <div class="itens-grid">
@@ -102,8 +112,6 @@
 
       <button type="submit">Cadastrar ponto de coleta</button>
     </form>
-
-  </div>
 {% endblock content %}
 
 {% block scripts %}
