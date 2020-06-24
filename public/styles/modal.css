@@ -90,3 +90,15 @@
 #modal form button:hover {
   background-color: #2fb85e;
 }
+
+/*Modal do point-saved*/
+#modal.point .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#modal.point .content h1 {
+  color: white;
+  padding-top: 25px;
+}
